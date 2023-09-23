@@ -1,0 +1,23 @@
+<launch>
+
+  <!-- Launch the object detection node -->
+  <node name="obstacle_detector_node" pkg="lidar_obstacle_detector" type="obstacle_detector_node" output="screen">
+    <!-- Input Topic Names -->
+    <param name="lidar_points_topic" value="/lslidar_point_cloud"/>
+    <!-- Output Topic Names -->
+    <param name="cloud_ground_topic" value="obstacle_detector/cloud_ground"/>
+    <param name="cloud_clusters_topic" value="obstacle_detector/cloud_clusters"/>
+    <param name="jsk_bboxes_topic" value="obstacle_detector/jsk_bboxes"/>
+    <param name="autoware_objects_topic" value="obstacle_detector/objects"/>
+    <!-- Parameters -->
+    <param name="bbox_target_frame" value="laser_link"/>
+  </node>
+
+  <!-- Dynamic Reconfigure GUI -->
+  <!-- <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" output="screen" /> -->
+
+  <!-- Rviz -->
+  <!-- <node type="rviz" name="rviz_object_detection" pkg="rviz" args="-d $(find lidar_obstacle_detector)/rviz/lidar_obstacle_detector.rviz" output="log" respawn="true" /> -->
+  <!-- <node pkg="tf" type="static_transform_publisher" name="laser_link_to_world" args="0 0 0 0 0 0 world laser_link 100" /> -->
+
+</launch>

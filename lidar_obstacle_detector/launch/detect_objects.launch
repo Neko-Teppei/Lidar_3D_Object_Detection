@@ -1,0 +1,18 @@
+<launch>
+  <!-- Launch the lidar driver -->
+  <include file="$(find lslidar_driver)/launch/lslidar_c32.launch" />
+
+  <!-- Launch the object detection node -->
+  <node name="object_detection" pkg="lidar_obstacle_detector" type="object_detection_node" output="screen">
+    <!-- Add any necessary parameters for your object detection node here -->
+    <!-- Example:
+    <param name="param_name" value="param_value" />
+    -->
+  </node>
+
+  <!-- Visualize the point cloud in RViz -->
+  <node name="rviz_object_detection" pkg="rviz" type="rviz" args="-d $(find lidar_obstacle_detector)/rviz_cfg/object_detection.rviz" />
+
+  <!-- Transform the point cloud frame if needed -->
+  <!--node pkg="tf" type="static_transform_publisher" name="laser_link_to_world" args="x y z roll pitch yaw world laser_link 100" /-->
+</launch>
