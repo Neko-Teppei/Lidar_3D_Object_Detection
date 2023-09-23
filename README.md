@@ -1,6 +1,9 @@
 
 Lidar 3D Object Detection
 =============
+# 3D object detection using LS 32 line LiDAR (C32-151A)
+(PS:镭神32线激光雷达)
+
 ###### Upload Log:
 
 Version|Date|Uploaded by 
@@ -16,7 +19,7 @@ The file contains:
 
 Change device modification:
 --------
-#####Modify the network port
+##### Modify the network port
 
 ![图 0](images/6ef0785097496020511879bb1b71ee038bca22ecbcbf35ad9daf65753aa28156.png)  
 
